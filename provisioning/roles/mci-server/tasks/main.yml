@@ -3,6 +3,10 @@
   shell: rm -f /tmp/mci.rpm
   sudo: true
 
+- name: Start cassandra
+  service: name=cassandra state=started
+  sudo: true
+
 - name: Checkout MCI code
   git: repo=https://github.com/SharedHealth/MCI-Resigtry.git
     dest={{mci_home}}
@@ -29,10 +33,6 @@
 
 - name: Install mci
   shell: yum install -y {{mci_home}}/mci-api/build/distributions/mci-0.1-1.noarch.rpm
-  sudo: true
-
-- name: Start cassandra
-  service: name=cassandra state=started
   sudo: true
 
 - name: Start mci
