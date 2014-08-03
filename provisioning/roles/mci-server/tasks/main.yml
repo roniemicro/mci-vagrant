@@ -17,8 +17,8 @@
 
 - name: Build rpm distribution
   shell: chdir={{mci_home}} ./gradlew clean dist
-  async: 15
-  poll: 0
+  async: 45
+  poll: 5
 
 - name: Check for existing installations
   shell: rpm -q mci-0.1-1

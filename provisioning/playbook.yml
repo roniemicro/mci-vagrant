@@ -6,5 +6,5 @@
     - cassandra
     - mci-server
   vars:
-    mci_home: "/projects/mci"
+    mci_home: "~/projects/mci"
     hostname_name: "{{ansible_fqdn}}"
