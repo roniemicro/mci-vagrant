@@ -1,4 +1,7 @@
 ---
+
+- include: config-hostname.yml tags=config
+
 - name: Clean existing
   shell: rm -f {{mci_home}}/mci-api/build/distributions/mci-0.1-1.noarch.rpm
   sudo: true
