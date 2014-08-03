@@ -1,6 +1,6 @@
 ---
 - name: Clean existing
-  shell: rm -f /tmp/mci.rpm
+  shell: rm -f {{mci_home}}/mci-api/build/distributions/mci-0.1-1.noarch.rpm
   sudo: true
 
 - name: Start cassandra
@@ -17,6 +17,7 @@
 
 - name: Build rpm distribution
   shell: chdir={{mci_home}} ./gradlew clean dist
+  sudo: true
   async: 45
   poll: 5
 
